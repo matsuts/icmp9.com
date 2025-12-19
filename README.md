@@ -1,11 +1,5 @@
 #  简单部署流程
 
-### 效果
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/3ab617cf-94e4-46fb-ae15-ed219f2a5896" />
-
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/b90eb30c-44f6-42f2-bcc0-a30d737d14ae" />
-
-
 ### 1.注册icmp9.com 账号，获取API KEY
 
 ![获取获取API KEYl 设置](https://github.com/user-attachments/assets/e55908be-f4e3-4294-aaee-4855fca2f3ec)
@@ -34,7 +28,7 @@ docker run -d \
   -e ICMP9_SERVER_HOST=" [必填] Cloudflared Tunnel 域名" \
   -e ICMP9_CLOUDFLARED_TOKEN="[必填] Cloudflare Tunnel Token" \
   -e ICMP9_IPV6_ONLY=False \
-  -e ICMP9_CDN_DOMAIN=ip.sb \
+  -e ICMP9_CDN_DOMAIN=icook.tw \
   -e ICMP9_START_PORT=39001 \
   -v "$(pwd)/data/subscribe:/root/subscribe" \
   nap0o/icmp9:latest
@@ -60,7 +54,7 @@ services:
       # [选填] 是否仅 IPv6 (True/False)，默认为 False
       - ICMP9_IPV6_ONLY=False
       # [选填] CDN 优选 IP 或域名，不填默认使用 ICMP9_SERVER_HOST
-      - ICMP9_CDN_DOMAIN=ip.sb
+      - ICMP9_CDN_DOMAIN=icook.tw
       # [选填] 起始端口，默认 39001
       - ICMP9_START_PORT=39001
     volumes:
@@ -69,9 +63,20 @@ services:
 
 ### 节点订阅地址
 
+#### 1.方法1：通过docker日志获取
+
+```
+docker logs icmp9
+```
+
+![订阅地址](https://github.com/user-attachments/assets/843a42f5-5245-4d6b-817b-17464f26c8fa)
+
+#### 2.方法2：手动拼接
+
 https://{ICMP9_SERVER_HOST}/{ICMP9_API_KEY}
 
 **其中**
+
 - {ICMP9_SERVER_HOST} 为 Cloudflare 隧道域名
 - {ICMP9_API_KEY} 为从 https://icmp9.com/user/dashboard 获取的 API KEY
 
