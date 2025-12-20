@@ -1,4 +1,4 @@
-# 简单部署流程
+#  简单部署流程
 
 ### 效果图
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/3ab617cf-94e4-46fb-ae15-ed219f2a5896" />
@@ -23,6 +23,24 @@
 ![Cloudflare Tunnel 设置](https://github.com/user-attachments/assets/06f93523-145f-445f-98ea-22a253b85b15)
 
 ### 4. 部署仅支持docker方式
+
+**一键交互脚本方式**
+
+**[重要] icmp9.com送的VPS,请务必先设置1G swap虚拟内存,再部署！！ **
+
+**⚠️设置swap成功后需要重启VPS才能生效!!! **
+
+```bash
+bash <(wget -qO- https://ghproxy.lvedong.eu.org/https://raw.githubusercontent.com/nap0o/icmp9.com/main/swap.sh)
+```
+
+<img height="350" alt="image" src="https://github.com/user-attachments/assets/fe436d79-25b0-4276-81b3-c4c2265fa35d" />
+
+**部署脚本**
+
+```bash
+bash <(wget -qO- https://ghproxy.lvedong.eu.org/https://raw.githubusercontent.com/nap0o/icmp9.com/main/install.sh)
+```
 
 **Docker run方式**
 
@@ -81,7 +99,9 @@ docker logs icmp9
 
 **方法2：手动拼接**
 
+```html
 https://{ICMP9_SERVER_HOST}/{ICMP9_API_KEY}
+```
 
 **其中**
 
@@ -89,7 +109,7 @@ https://{ICMP9_SERVER_HOST}/{ICMP9_API_KEY}
 - {ICMP9_API_KEY} 为从 https://icmp9.com/user/dashboard 获取的 API KEY
 - 格式如： https://icmp9.nezha.pp.ua/b58828c1-4df5-4156-ee77-a889968533ae
 
-### 感谢
+###  感谢
 
 - https://github.com/fscarmen/ArgoX
 
