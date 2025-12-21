@@ -85,8 +85,8 @@ docker run -d \
   --restart always \
   --network host \
   -e ICMP9_API_KEY="[必填] icmp9 提供的 API KEY" \
-  -e ICMP9_SERVER_HOST="[必填] Cloudflared Tunnel 域名" \
-  -e ICMP9_CLOUDFLARED_TOKEN="[必填] Cloudflare Tunnel Token" \
+  -e ICMP9_SERVER_HOST="[选填] Cloudflared Tunnel 域名" \
+  -e ICMP9_CLOUDFLARED_TOKEN="[选填] Cloudflare Tunnel Token" \
   -e ICMP9_IPV6_ONLY=False \
   -e ICMP9_CDN_DOMAIN=icook.tw \
   -e ICMP9_START_PORT=39001 \
@@ -106,9 +106,9 @@ services:
     environment:      
       # [必填] icmp9 提供的 API KEY
       - ICMP9_API_KEY=
-      # [必填] Cloudflared Tunnel 域名
+      # [选填] Cloudflared Tunnel 域名
       - ICMP9_SERVER_HOST=
-      # [必填] Cloudflare Tunnel Token
+      # [选填] Cloudflare Tunnel Token
       - ICMP9_CLOUDFLARED_TOKEN=
       # [选填] VPS 是否 IPv6 Only (True/False)，默认为 False
       - ICMP9_IPV6_ONLY=False
